@@ -14,14 +14,15 @@ basic.forever(function () {
         if (bitbot.sonar(BBPingUnit.Centimeters) < 5) {
             bitbot.stop(BBStopMode.Coast)
             bitbot.setLedColor(0xFF0000)
+            basic.pause(2000)
             hinder = true
         }
     } else if (hinder == true) {
-        bitbot.rotatems(BBRobotDirection.Right, 40, 70)
-        bitbot.rotatems(BBRobotDirection.Left, 40, 70)
-        bitbot.goms(BBDirection.Forward, 40, 70)
-        bitbot.rotatems(BBRobotDirection.Left, 40, 70)
+        bitbot.rotatems(BBRobotDirection.Right, 40, 700)
+        bitbot.goms(BBDirection.Forward, 40, 700)
+        bitbot.rotatems(BBRobotDirection.Left, 40, 700)
         bitbot.goms(BBDirection.Forward, 100, 20)
         hinder = false
+        bitbot.rotatems(BBRobotDirection.Left, 40, 700)
     }
 })
